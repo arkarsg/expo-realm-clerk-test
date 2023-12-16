@@ -89,5 +89,26 @@ We set `fallback` to be exactly `InitalLayout`. In other words, instead of letti
 
 ## Authenticating App Sync with Clerk
 
-TO-DO
+Now, we are ready to work with `Custom JWT Authentication` in Atlas App services.
 
+- In the Atlas App service, use JWK URI as the verification method
+- Set the `Audience` field to the endpoint found on Clerk for example:
+    - `https://your-app-123.clerk.accounts.dev/`
+- Now, in Clerk, create a custom JWT template containing all the metadata that you need, such as the email, username. More importantly, include an `aud` field:
+
+Example:
+```
+{
+	"id": "{{user.id}}",
+	"aud": "https://quick-mite-52.accounts.dev/",
+	"name": "{{user.username}}",
+	"role": "authenticated",
+	"email": "{{user.primary_email_address}}"
+}
+```
+
+---
+
+And that's it, now whenever you register through Clerk, a new user will be reflected on your Atlas App.
+
+---
