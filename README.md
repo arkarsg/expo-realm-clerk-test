@@ -53,7 +53,7 @@ where `Navigation` checks whether a user is signed in.
 ### Incorrect
 Define our `fallback` component of `UserProvider` to be `ClerkLogin`, and replace `Navigation` component with `TaskListScreen`.
 
-This is not right because the moment we navigate to another page, such as `Register` from our Login page, we may get the error:
+Usually done this way when using Realm. This is not right because the moment we navigate to another page, such as `Register` from our Login page, we may get the error:
 > Attempted to navigate before mounting the Root Layout
 
 I assume this is because `UserProvider` immediately loads the `ClerkLogin` instead of mounting the root component, such as `Navigation`, as above. You can verify this behaviour by directing to a different sign in page through `Navigation` and a different `fallback` component. You will be routed to the `fallback` component
