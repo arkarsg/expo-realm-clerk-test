@@ -4,7 +4,7 @@
 - **Clerk** : Authentication provider
 - **MongoDB Realm with Device Sync** : Offline-first database provider
 
-> For MongoDB and Firebase Auth, refer [the other repo](to https://github.com/arkarsg/voyage/)
+> For MongoDB and Firebase Auth, refer [this other repo](https://github.com/arkarsg/voyage/)
 
 ---
 
